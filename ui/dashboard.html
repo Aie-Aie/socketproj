@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"> 
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>No Title</title>
+		<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="dashboard.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+
+			<div class="container-fluid">
+				<div class="navbar-header">
+
+
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="#navbar" area-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="#">Project Name</a>	
+					
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+					<ul class="nav nav-sidebar">
+						<li><a href="#">Overview?</a></li>
+						<li><a href="#">Socket Packages</a></li>
+						<li><a href="#">Defects?</a></li>
+						
+					</ul>
+
+				</div>
+
+				<div class="col-sm-9 col-sm-offset-3 col-md-offset-2 main">
+					<!--searchbar -->
+					
+
+					<!--file uploader-->
+
+					<div class="form-group" align="left" id="file">
+
+						<input type="file" id="fileupload" onchange="previewFile();"><br>
+						
+					</div>
+
+				
+				
+					<div align="right" id="searchbar" >
+						<form class="form-inline">
+							<input class="form-control">
+							<button type="submit" id= "search" class="btn btn-default">Search</button>
+
+						</form> 
+						<hr/>
+					</div>
+
+					<div id="imagecontent" style="display:none;">
+						<div class="col-xs-6 col-sm-6 placeholder" id="pic">
+							<canvas src= "" id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas>
+						</div>
+						
+						<div class="col-xs-6 col-sm-6 placeholder">
+							<h4>Specifications</h4>
+
+							<div>
+								<form  class="form-horizontal">
+
+									<div class="form-group">
+										<label class="control-label col-sm-3"  >Socket Id :</label>
+										<div class="col-sm-5">
+											<input id="socketid" class="form-control">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-sm-3"  >Pin Number:</label>
+										<div class="col-sm-5">
+											<input id="pinnum" class="form-control">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-sm-3"  >X-Axis</label>
+										<div class="col-sm-5">
+											<input id="xcoor" class="form-control">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-sm-3">Y-Axis</label>
+										<div class="col-sm-5"> 
+											<input class="form-control" id="ycoor">
+										</div>
+									</div>
+									<div class="form-group" align="right"> 
+										<div class="col-sm-offset-3 col-sm-5">
+											<button type="button" class="btn btn-default"  id= "add" onclick="assign();">Assign</button>
+											<button type="button" class="btn btn-default" id="view" onclick="viewpin();">View Pins</button>
+										</div>
+	  								</div>
+
+								</form> 
+
+							</div>
+							<hr>
+							<div id="content" style="display:none;" class="col-xs-6 col-sm-12 placeholder">
+								<table class="table table-bordered">
+									<thead id="tablehead">
+										<tr style ="text-align: center;"  align="center">
+											<th>SocketName</th>
+											<th>Pin</th>
+											<th>X-Coor</th>
+											<th>Y-Coor</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody id="loadentry"></tbody>
+								</table>
+
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="dist/js/bootstrap.min.js"></script>	
+		<script language ="javascript" type="text/javascript" src = "app.js"></script>
+		<script src="app.js"></script>
+		<script src="jQuery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  		
+
+	</body>
+</html>
